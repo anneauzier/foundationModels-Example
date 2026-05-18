@@ -21,7 +21,6 @@ enum Notifier {
         content.body = "Cobrar \(emprestimo.pessoa) – R$ \(String(format: "%.2f", emprestimo.valor)) (\(emprestimo.descricao))"
         content.sound = .default
 
-        // Trigger na data de cobrança (sem repetição)
         let date = emprestimo.dataCobranca
         let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)

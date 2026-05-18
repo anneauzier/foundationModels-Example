@@ -5,24 +5,24 @@ import Playgrounds
 
 #Playground {
 
-    func formatDate(year: Int, month: Int, day: Int) -> Date {
-        var components = DateComponents()
-        components.year = year
-        components.month = month
-        components.day = day
-        return Calendar.current.date(from: components)!
-    }
+//    func formatDate(year: Int, month: Int, day: Int) -> Date {
+//        var components = DateComponents()
+//        components.year = year
+//        components.month = month
+//        components.day = day
+//        return Calendar.current.date(from: components)!
+//    }
 
     let emprestimo = Emprestimo(
-        pessoa: "Eduardo",
+         pessoa: "Eduardo",
         descricao: "Valor emprestado para comprar um celular",
         valor: 3000,
-        dataEmprestimo: formatDate(year: 2026, month: 5, day: 7),
-        dataCobranca: formatDate(year: 2026, month: 6, day: 7),
+        dataEmprestimo: Date(),
+        dataCobranca: Date(),
         forma: "Caixinha"
     )
 
-    let amount: Double = emprestimo.valor
+    let valorEmprestado: Double = emprestimo.valor
 
     let dataEmprestimo: Date = emprestimo.dataEmprestimo
     let dataCobranca = emprestimo.dataCobranca
@@ -53,7 +53,7 @@ import Playgrounds
 
     let prompt = """
     Loan data:
-    - Amount: R$ \(amount)
+    - Amount: R$ \(valorEmprestado)
     - Loan date: \(dataEmprestimo)
     - Billing date: \(dataCobranca)
     - Assumed annual CDI rate: 14.83% p.a. (= 0.1483 in decimal)

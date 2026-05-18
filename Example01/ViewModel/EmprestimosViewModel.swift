@@ -58,4 +58,23 @@ final class EmprestimosViewModel: ObservableObject {
             print("Erro ao carregar: \(error)")
         }
     }
+
+//    func calcularEExplicar(emprestimo: Emprestimo) async -> CDIReturn? {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd/MM/yyyy"
+//        
+//        let prompt = """
+//        Loan data:
+//        - Amount: R$ \(emprestimo.valor)
+//        - Loan date: \(formatter.string(from: emprestimo.dataEmprestimo))
+//        - Billing date: \(formatter.string(from: emprestimo.dataCobranca))
+//        - Assumed annual CDI rate: 14.83% p.a. (= 0.1483 in decimal)
+//
+//        Task: Calculate the net return for this period assuming 100% CDI.
+//        Return the numeric result in valorRetorno and explain the result 
+//        in simple and friendly language in explicacao.
+//        """
+//        
+//    }
+
 }
