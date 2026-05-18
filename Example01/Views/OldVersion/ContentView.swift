@@ -16,26 +16,26 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if vm.emprestimos.isEmpty {
-                    ContentUnavailableView(
-                        "Sem empréstimos",
-                        systemImage: "tray",
-                        description: Text("Toque em + para adicionar um.")
-                    )
-                } else {
+//            Group {
+//                if vm.emprestimos.isEmpty {
+//                    ContentUnavailableView(
+//                        "Sem empréstimos",
+//                        systemImage: "tray",
+//                        description: Text("Toque em + para adicionar um.")
+//                    )
+//                } else {
                     List {
                         ForEach(vm.emprestimos) { e in
                             EmprestimoRow(emprestimo: e)
                                 .listRowBackground(Theme.secondary.opacity(0.50))
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                     Button(role: .destructive) {
-                                        if let index = vm.emprestimos.firstIndex(of: e) {
-                                            vm.remove(at: IndexSet(integer: index))
-                                        }
-                                    } label: {
-                                        Label("", systemImage: "trash")
-                                    }
+//                                        if let index = vm.emprestimos.firstIndex(of: e) {
+//                                            vm.remove(at: IndexSet(integer: index))
+//                                        }
+//                                    } label: {
+//                                        Label("", systemImage: "trash")
+//                                    }
 
                                     Button {
                                         editing = e
@@ -43,9 +43,9 @@ struct ContentView: View {
                                         Label("", systemImage: "square.and.pencil")
                                     }
                                     
-                                }
+//                                }
                         }
-                        .onDelete(perform: vm.remove)
+//                        .onDelete(perform: vm.remove)
                     }
                     .scrollContentBackground(.hidden)
                 }
